@@ -16,7 +16,7 @@ var el=e=>document.getElementById(e),crc_table=[],computed=0,create_table=X=>{
         var Z;
         if(method=="1") {Z=Number(str.at(n))*16 + Number(str.at(n+1));n++;}
         else if(method=="2") Z=str.charCodeAt(n);
-        else console.log(method);
+        console.log("%c%s;%s","color:red;",Z,method);
         c=BigInt(crc_table[(c^BigInt(Z))&0xffn])^BigInt(c>>8n)
     }
     return c
