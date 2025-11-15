@@ -2,18 +2,25 @@
 <html lang=en>
     <head>
         <meta charset=UTF-8>
-        <title>CRC</title>
+        <title>Cyclic Redundancy Check</title>
         <script src="./index.js"></script>
     </head>
     <body>
-        <h1>CRC</h1>
+        <h1>Cyclic Redundancy Check Calculator (CRC)</h1>
         <div>
             <label for=a>CRC index</label>
             <input type=text value="edb88320" id=a></input>
             <br>
-            <label for=a>Input string</label>
-            <input type=text value id=a></input>
+            <label for=a1>Input</label>
+            <input type=text value id=a1></input>
             <br>
+            <label for=a2>Input should be interpreted as:</label>
+            <select id=a2>
+                <option value=1 selected>Hexadecimal</option>
+                <option value=2>Text</option>
+            </select>
+            <br>
+            <button id=c>Calculate CRC</button>
             <div id=b></div>
         </div>
     </body>
