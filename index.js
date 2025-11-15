@@ -19,7 +19,7 @@ var el=e=>document.getElementById(e),crc_table=[],computed=0,create_table=X=>{
         c=BigInt(crc_table[(c^BigInt(Z))&0xffn])^BigInt(c>>8n)
     }
     return c
-},crc=(str,length)=>Number(update_crc(0xffffffffn,str,length)^0xffffffffn,el("a2).value).toString(16)
+},crc=(str,length)=>Number(update_crc(0xffffffffn,str,length)^0xffffffffn,el("a2").value).toString(16)
 window.addEventListener("load",()=>{
     el("c").addEventListener("click",()=>{
         el("b").textContent=crc(el("a1").textContent,el("a1").textContent.length);
