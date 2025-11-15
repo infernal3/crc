@@ -14,8 +14,9 @@ var el=e=>document.getElementById(e),crc_table=[],computed=0,create_table=X=>{
     if(!computed)create_table(Number("0x"+el("a").value));
     for(n=0;n<length;n++){
         var Z;
-        if(method==1) {Z=Number(str.at(n))*16 + Number(str.at(n+1));n++;}
-        if(method==2) Z=str.charCodeAt(n);
+        if(method=="1") {Z=Number(str.at(n))*16 + Number(str.at(n+1));n++;}
+        else if(method=="2") Z=str.charCodeAt(n);
+        else console.log(method);
         c=BigInt(crc_table[(c^BigInt(Z))&0xffn])^BigInt(c>>8n)
     }
     return c
