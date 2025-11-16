@@ -23,6 +23,12 @@ var el=e=>document.getElementById(e),crc_table=[],computed=0,create_table=X=>{
 },crc=(str,length)=>Number(update_crc(0xffffffffn,str,length,el("a2").value)^0xffffffffn).toString(16)
 window.addEventListener("load",()=>{
     el("c").addEventListener("click",()=>{
-        el("b").textContent=crc(el("a1").value,el("a1").value.length);
+        var U;
+        try{
+            U=crc(el("a1").value,el("a1").value.length);
+        }catch(e){
+            U=`An error occurred: ${e}`
+        }
+        el("b").textContent=U;
     });
 });
